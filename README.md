@@ -142,7 +142,7 @@ You can adapt and use BiConsumer based on the requirements of your specific use 
 
 Let's explore some advanced topics related to BiConsumer in Java.
 
-# 1. Chaining BiConsumers:
+## 1. Chaining BiConsumers:
 
 You can chain multiple BiConsumer instances together using the andThen method. This allows you to create a sequence of operations that will be executed in order.
 
