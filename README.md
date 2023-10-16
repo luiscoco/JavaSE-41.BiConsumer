@@ -1,18 +1,21 @@
 # JavaSE-BiConsumer
 
-In Java, BiConsumer is a functional interface that represents an operation that takes two input arguments and returns no result. It's a part of the java.util.function package introduced in Java 8 to support functional programming.
+In Java, BiConsumer is a functional interface that represents an operation that takes two input arguments and returns no result. 
+
+It's a part of the java.util.function package introduced in Java 8 to support functional programming.
 
 The BiConsumer interface has a single method called accept, which takes two parameters and performs some operation on them. Here's the method signature:
 
-java
-Copy code
+```java
 void accept(T t, U u);
+```
+
 T: the type of the first input argument.
 U: the type of the second input argument.
+
 Here's a simple example to illustrate how you might use BiConsumer:
 
-java
-Copy code
+```java
 import java.util.function.BiConsumer;
 
 public class BiConsumerExample {
@@ -34,29 +37,27 @@ public class BiConsumerExample {
         addNumbers.accept(5, 7);
     }
 }
+```
+
 In this example:
 
 concatenateStrings is a BiConsumer that takes two strings and prints their concatenation.
+
 addNumbers is a BiConsumer that takes two integers and prints their sum.
+
 When you run this program, you'll see output like:
 
-yaml
-Copy code
+```
 Concatenated string: HelloWorld
 Sum of numbers: 12
+```
 You can use BiConsumer in various scenarios where you need to perform an operation on two inputs without returning any result, such as updating state, printing, or logging.
 
+# More samples about "BiConsumer" in Java
 
+## Example 1: Map Iteration
 
-
-User
-can you provide me more samples about "BiConsumer" in Java
-ChatGPT
-Certainly! Here are a few more examples of using BiConsumer in Java:
-
-Example 1: Map Iteration
-java
-Copy code
+```java
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.BiConsumer;
@@ -76,9 +77,11 @@ public class BiConsumerExample {
         ages.forEach(printEntry);
     }
 }
-Example 2: Exception Handling
-java
-Copy code
+```
+
+## Example 2: Exception Handling
+
+```java
 import java.util.function.BiConsumer;
 
 public class BiConsumerExample {
@@ -101,9 +104,11 @@ public class BiConsumerExample {
         }
     }
 }
-Example 3: Updating Collections
-java
-Copy code
+```
+
+## Example 3: Updating Collections
+
+```java
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.BiConsumer;
@@ -127,21 +132,21 @@ public class BiConsumerExample {
         names.forEach(System.out::println);
     }
 }
-These examples showcase different scenarios where BiConsumer can be applied, such as iterating through a map, handling exceptions, and updating collections. You can adapt and use BiConsumer based on the requirements of your specific use case.
+```
 
+These examples showcase different scenarios where BiConsumer can be applied, such as iterating through a map, handling exceptions, and updating collections. 
 
+You can adapt and use BiConsumer based on the requirements of your specific use case.
 
+# More advance topics about "BiConsumer" in Java
 
-User
-can you explain me more advance topics about "BiConsumer" in Java
-ChatGPT
-Certainly! Let's explore some advanced topics related to BiConsumer in Java.
+Let's explore some advanced topics related to BiConsumer in Java.
 
-1. Chaining BiConsumers:
+# 1. Chaining BiConsumers:
+
 You can chain multiple BiConsumer instances together using the andThen method. This allows you to create a sequence of operations that will be executed in order.
 
-java
-Copy code
+```java
 import java.util.function.BiConsumer;
 
 public class BiConsumerExample {
@@ -161,13 +166,15 @@ public class BiConsumerExample {
         combined.accept("John", "Doe");
     }
 }
+```
+
 In this example, combined is a BiConsumer that first converts names to uppercase and then prints their lengths.
 
-2. Handling Checked Exceptions:
+## 2. Handling Checked Exceptions:
+
 If your BiConsumer involves code that throws checked exceptions, you can use the ExceptionUtils class from Apache Commons Lang or handle it using a lambda that wraps the checked exception.
 
-java
-Copy code
+```java
 import java.io.IOException;
 import java.util.function.BiConsumer;
 
@@ -190,11 +197,13 @@ public class BiConsumerExample {
         fileCopier.accept("source.txt", "destination.txt");
     }
 }
-3. BiConsumer with Generics:
+```
+
+## 3. BiConsumer with Generics:
+
 You can use generics to create a more flexible BiConsumer that can handle different types of input.
 
-java
-Copy code
+```java
 import java.util.function.BiConsumer;
 
 public class BiConsumerExample {
@@ -210,4 +219,6 @@ public class BiConsumerExample {
         processPair("BiConsumer", 10, printLength);
     }
 }
+```
+
 In this example, the processPair method takes two parameters and a BiConsumer, allowing you to process different types of pairs.
